@@ -1,0 +1,30 @@
+version: "2"
+services:
+  privnet-1:
+    build: ./privnet
+    tty: true
+    volumes:
+      - ./privnet/protocol.json:/opt/neo-cli/protocol.json
+      - ./privnet/config.json:/opt/neo-cli/config.json
+      - ./privnet/wallets/wallet1.db3:/opt/neo-cli/wallet.db3
+  privnet-2:
+    build: ./privnet
+    tty: true
+    volumes:
+      - ./privnet/protocol.json:/opt/neo-cli/protocol.json
+      - ./privnet/config.json:/opt/neo-cli/config.json
+      - ./privnet/wallets/wallet2.db3:/opt/neo-cli/wallet.db3
+  privnet-3:
+    build: ./privnet
+    tty: true
+    volumes:
+      - ./privnet/protocol.json:/opt/neo-cli/protocol.json
+      - ./privnet/config.json:/opt/neo-cli/config.json
+      - ./privnet/wallets/wallet3.db3:/opt/neo-cli/wallet.db3
+  privnet-4:
+    build: ./privnet
+    tty: true
+    volumes:
+      - ./privnet/protocol.json:/opt/neo-cli/protocol.json
+      - ./privnet/config.json:/opt/neo-cli/config.json
+      - ./privnet/wallets/wallet4.db3:/opt/neo-cli/wallet.db3

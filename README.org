@@ -1,0 +1,19 @@
+* Effect Network NEO Implementation
+  
+  Start of the reference implementation of the Effect protocol in NEO.
+
+** Getting started
+
+   The project requires Docker to setup and connect all the pieces
+   during development.
+
+   Currently this repository sets up a private NEO blockchain and
+   starts running a 4-node consensus. Each node keeps its own wallet
+   in ~/opt/neo-cli/wallet.db3~ that will receive transaction fees
+   from their blocks.
+
+   To run the private chain:
+   #+BEGIN_SRC bash
+docker-compose up -d
+   #+END_SRC
+

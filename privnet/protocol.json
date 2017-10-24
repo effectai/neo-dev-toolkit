@@ -1,0 +1,24 @@
+﻿{
+  "ProtocolConfiguration": {
+    "Magic": 56753,
+    "AddressVersion": 23,
+    "StandbyValidators": [
+      "0358f065dd7b19969ee5a3c415647c4b12f5ab03ae78788de6718ea46cebb3b758",
+      "039f3d50a1db4957ba6c1c6e7c3f4ac705d10d77dd1f7846259f65d339731fa72a",
+      "0204f30870e77226ffb6addd968d78feeba12e9600176c53d877f722054599d92f",
+      "02fde0d237a58714e2625dc012a8aad74ad04e6b7ec7ae680e150e559cdc2471f0"
+    ],
+    "SeedList": [
+      "privnet-1:10333",
+      "privnet-2:10333",
+      "privnet-3:10333",
+      "privnet-4:10333"
+    ],
+    "SystemFee": {
+      "EnrollmentTransaction": 1000,
+      "IssueTransaction": 500,
+      "PublishTransaction": 500,
+      "RegisterTransaction": 10000
+    }
+  }
+}
