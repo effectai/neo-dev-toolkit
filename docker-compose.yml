@@ -7,6 +7,11 @@ services:
       - ./privnet/protocol.json:/opt/neo-cli/protocol.json
       - ./privnet/config.json:/opt/neo-cli/config.json
       - ./privnet/wallets/wallet1.db3:/opt/neo-cli/wallet.db3
+    ports:
+      - 10333:10333
+      - 10332:10332
+    environment:
+      - PASS=one
   privnet-2:
     build: ./privnet
     tty: true
@@ -14,6 +19,8 @@ services:
       - ./privnet/protocol.json:/opt/neo-cli/protocol.json
       - ./privnet/config.json:/opt/neo-cli/config.json
       - ./privnet/wallets/wallet2.db3:/opt/neo-cli/wallet.db3
+    environment:
+      - PASS=two
   privnet-3:
     build: ./privnet
     tty: true
@@ -21,6 +28,8 @@ services:
       - ./privnet/protocol.json:/opt/neo-cli/protocol.json
       - ./privnet/config.json:/opt/neo-cli/config.json
       - ./privnet/wallets/wallet3.db3:/opt/neo-cli/wallet.db3
+    environment:
+      - PASS=three
   privnet-4:
     build: ./privnet
     tty: true
@@ -28,3 +37,6 @@ services:
       - ./privnet/protocol.json:/opt/neo-cli/protocol.json
       - ./privnet/config.json:/opt/neo-cli/config.json
       - ./privnet/wallets/wallet4.db3:/opt/neo-cli/wallet.db3
+    environment:
+      - PASS=four
+
