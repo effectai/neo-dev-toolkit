@@ -1,6 +1,6 @@
 # neo-dev-toolkit
 
-A simple way to setup your NEO private network with some development tools. It's a docker-compose file starts a 4-node private network and connects several tools to it.
+A simple way to setup your NEO private network with some development tools. It's a docker-compose file that starts a 4-node private network and connects small block explorer to it.
 
 ## State
 
@@ -19,8 +19,8 @@ The following components are included:
 You will need `docker` and `docker-compose` to run this project.
 
 ```
-$ git clone https://github.com/effectai/neo-privnet-toolkit
-$ cd neo-privnet-toolkit
+$ git clone https://github.com/effectai/neo-dev-toolkit
+$ cd neo-dev-toolkit
 $ docker-compose up -d
 ```
 
