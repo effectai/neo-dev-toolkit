@@ -1,42 +1,25 @@
 version: "2"
 services:
   privnet-1:
-    build: ./privnet
+    build: .
     tty: true
-    volumes:
-      - ./privnet/protocol.json:/opt/neo-cli/protocol.json
-      - ./privnet/config.json:/opt/neo-cli/config.json
-      - ./privnet/wallets/wallet1.db3:/opt/neo-cli/wallet.db3
     ports:
-      - 10333:10333
       - 10332:10332
     environment:
-      - PASS=one
+      - CONSENSUS_KEY=KxyjQ8eUa4FHt3Gvioyt1Wz29cTUrE4eTqX3yFSk1YFCsPL8uNsY
   privnet-2:
-    build: ./privnet
+    build: .
     tty: true
-    volumes:
-      - ./privnet/protocol.json:/opt/neo-cli/protocol.json
-      - ./privnet/config.json:/opt/neo-cli/config.json
-      - ./privnet/wallets/wallet2.db3:/opt/neo-cli/wallet.db3
     environment:
-      - PASS=two
+      - CONSENSUS_KEY=KzfPUYDC9n2yf4fK5ro4C8KMcdeXtFuEnStycbZgX3GomiUsvX6W
   privnet-3:
-    build: ./privnet
+    build: .
     tty: true
-    volumes:
-      - ./privnet/protocol.json:/opt/neo-cli/protocol.json
-      - ./privnet/config.json:/opt/neo-cli/config.json
-      - ./privnet/wallets/wallet3.db3:/opt/neo-cli/wallet.db3
     environment:
-      - PASS=three
+      - CONSENSUS_KEY=L2oEXKRAAMiPEZukwR5ho2S6SMeQLhcK9mF71ZnF7GvT8dU4Kkgz
   privnet-4:
-    build: ./privnet
+    build: .
     tty: true
-    volumes:
-      - ./privnet/protocol.json:/opt/neo-cli/protocol.json
-      - ./privnet/config.json:/opt/neo-cli/config.json
-      - ./privnet/wallets/wallet4.db3:/opt/neo-cli/wallet.db3
     environment:
-      - PASS=four
+      - CONSENSUS_KEY=KzgWE3u3EDp13XPXXuTKZxeJ3Gi8Bsm8f9ijY3ZsCKKRvZUo1Cdn
 
