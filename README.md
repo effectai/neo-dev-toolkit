@@ -1,6 +1,10 @@
-# neo-toolkit
+# neo-dev-toolkit
 
-A simple way to setup your NEO private network with some development tools.
+A simple way to setup your NEO private network with some development tools. It's a docker-compose file starts a 4-node private network and connects several tools to it.
+
+## State
+
+The private network should function correctly, and tools like `neo-gui` and `neo-gui-develop` should be able to connect to it when configured correctly. For the state of the interface you can refer to [duplo](https://github.com/effectai/duplo).
 
 ## Components
 
@@ -20,7 +24,7 @@ $ cd neo-privnet-toolkit
 $ docker-compose up -d
 ```
 
-Then visit http://localhost:3000 to view the interface.
+Then visit http://localhost:8080 to view the interface.
 
 ## Credits
 
@@ -30,6 +34,4 @@ The private network is inspired by
 - This project runs 1 node per container, instead of 4 nodes in 1 container
 - The image is based on `microsoft/dotnet:1.1-runtime` and has smaller size (278MB compared to 2.11GB)
 - Consensus keys are imported through ENV vars instead of wallet files
-- This image compiles `neo-cli` from source
-
-
+- The image compiles `neo-cli` from source

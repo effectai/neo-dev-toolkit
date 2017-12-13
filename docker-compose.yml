@@ -1,10 +1,9 @@
 version: "2"
 services:
+  # Private Network
   privnet-1:
     build: .
     tty: true
-    ports:
-      - 10332:10332
     environment:
       - CONSENSUS_KEY=KxyjQ8eUa4FHt3Gvioyt1Wz29cTUrE4eTqX3yFSk1YFCsPL8uNsY
   privnet-2:
@@ -22,4 +21,15 @@ services:
     tty: true
     environment:
       - CONSENSUS_KEY=KzgWE3u3EDp13XPXXuTKZxeJ3Gi8Bsm8f9ijY3ZsCKKRvZUo1Cdn
-
+  # Duplo
+  duplo-backend:
+    image: effectai/neo-clojure-clr:latest
+    ports:
+      - 10336:10336
+    command: tasks/rpc
+    environment:
+      - RPC_SERVER=http://privnet-1:10332
+  duplo:
+    image: effectai/duplo:latest
+    ports:
+      - 8080:80
