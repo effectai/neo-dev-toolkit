@@ -2,34 +2,34 @@ version: "2"
 services:
   # Private Network
   privnet-1:
-    build: .
+    build: effectai/neo-privnet
     tty: true
     environment:
       - CONSENSUS_KEY=KxyjQ8eUa4FHt3Gvioyt1Wz29cTUrE4eTqX3yFSk1YFCsPL8uNsY
   privnet-2:
-    build: .
+    build: effectai/neo-privnet
     tty: true
     environment:
       - CONSENSUS_KEY=KzfPUYDC9n2yf4fK5ro4C8KMcdeXtFuEnStycbZgX3GomiUsvX6W
   privnet-3:
-    build: .
+    build: effectai/neo-privnet
     tty: true
     environment:
       - CONSENSUS_KEY=L2oEXKRAAMiPEZukwR5ho2S6SMeQLhcK9mF71ZnF7GvT8dU4Kkgz
   privnet-4:
-    build: .
+    build: effectai/neo-privnet
     tty: true
     environment:
       - CONSENSUS_KEY=KzgWE3u3EDp13XPXXuTKZxeJ3Gi8Bsm8f9ijY3ZsCKKRvZUo1Cdn
   # Duplo
   duplo-backend:
-    image: effectai/neo-clojure-clr:latest
+    image: effectai/neo-clojure-clr
     ports:
       - 10336:10336
     command: tasks/rpc
     environment:
       - RPC_SERVER=http://privnet-1:10332
   duplo:
-    image: effectai/duplo:latest
+    image: effectai/duplo
     ports:
       - 8080:80
