@@ -4,31 +4,44 @@ services:
   privnet-1:
     image: effectai/neo-privnet
     tty: true
+    ports:
+      - 10332:10332
+    volumes:
+      - ./wallets/wallet1.json:/opt/wallet.json
     environment:
-      - CONSENSUS_KEY=KxyjQ8eUa4FHt3Gvioyt1Wz29cTUrE4eTqX3yFSk1YFCsPL8uNsY
+      - WALLET_PASS=one
   privnet-2:
     image: effectai/neo-privnet
     tty: true
+    volumes:
+      - ./wallets/wallet2.json:/opt/wallet.json
     environment:
-      - CONSENSUS_KEY=KzfPUYDC9n2yf4fK5ro4C8KMcdeXtFuEnStycbZgX3GomiUsvX6W
+      - WALLET_PASS=two
   privnet-3:
     image: effectai/neo-privnet
     tty: true
+    volumes:
+      - ./wallets/wallet3.json:/opt/wallet.json
     environment:
-      - CONSENSUS_KEY=L2oEXKRAAMiPEZukwR5ho2S6SMeQLhcK9mF71ZnF7GvT8dU4Kkgz
+      - WALLET_PASS=three
   privnet-4:
     image: effectai/neo-privnet
     tty: true
+    volumes:
+      - ./wallets/wallet4.json:/opt/wallet.json
     environment:
-      - CONSENSUS_KEY=KzgWE3u3EDp13XPXXuTKZxeJ3Gi8Bsm8f9ijY3ZsCKKRvZUo1Cdn
+      - WALLET_PASS=four
   # Duplo
   duplo-backend:
     image: effectai/neo-clojure-clr
     ports:
       - 10336:10336
     command: tasks/rpc
+    volumes:
+      - /usr/local/neo-clj/data
     environment:
       - RPC_SERVER=http://privnet-1:10332
+      - DATA_DIR=/usr/local/neo-clj/data
   duplo:
     image: effectai/duplo
     ports:

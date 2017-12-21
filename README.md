@@ -32,6 +32,6 @@ The private network is inspired by
 [neo-privatenet-docker](https://github.com/CityOfZion/neo-privatenet-docker), and uses the same consensus keys and magic. Thanks to the CoZ developers for creating it. Some differences are:
 
 - This project runs 1 node per container, instead of 4 nodes in 1 container
-- The image is based on `microsoft/dotnet:1.1-runtime` and has smaller size (278MB compared to 2.11GB)
-- Consensus keys are imported through ENV vars instead of wallet files
-- The image compiles `neo-cli` from source
+- Its a bit smaller size (300MB vs 1.35GB), mostly because this image doesn't include `neo-python`
+
+If you want a single-image privatenet or want to use `neo-python` I recommend to use the CoZ image.
