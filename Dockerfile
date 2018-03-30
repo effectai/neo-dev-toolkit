@@ -8,7 +8,7 @@ RUN apt-get update \
        unzip \
     && rm -rf /var/lib/apt/lists/*
 
-ENV NEO_CLI_V 2.5.2
+ENV NEO_CLI_V 2.7.3
 ENV NEO_CLI_FILE neo-cli-ubuntu.16.10-x64.zip
 ENV WALLET_PASS test
 
