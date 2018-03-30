@@ -1,10 +1,10 @@
 version: "2"
 services:
-  # Private Network
   privnet-1:
     image: effectai/neo-node:2.7.3
     tty: true
     ports:
+      - 30333:10333
       - 10332:10332
     volumes:
       - ./wallets/wallet1.json:/opt/wallet.json
@@ -13,6 +13,8 @@ services:
   privnet-2:
     image: effectai/neo-node:2.7.3
     tty: true
+    ports:
+      - 30334:10333
     volumes:
       - ./wallets/wallet2.json:/opt/wallet.json
     environment:
@@ -22,11 +24,15 @@ services:
     tty: true
     volumes:
       - ./wallets/wallet3.json:/opt/wallet.json
+    ports:
+      - 30335:10333
     environment:
       - WALLET_PASS=three
   privnet-4:
     image: effectai/neo-node:2.7.3
     tty: true
+    ports:
+      - 30336:10333
     volumes:
       - ./wallets/wallet4.json:/opt/wallet.json
     environment:
